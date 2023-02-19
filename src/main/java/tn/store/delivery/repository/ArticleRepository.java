@@ -1,5 +1,9 @@
 package tn.store.delivery.repository;
 
-public interface ArticleRepository {
+import org.springframework.data.repository.CrudRepository;
 
-}
+import tn.store.delivery.model.Article;
+
+public interface ArticleRepository extends CrudRepository<Article, Integer>  
+{  
+}  

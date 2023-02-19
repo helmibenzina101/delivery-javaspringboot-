@@ -20,33 +20,27 @@ public class ArticleService {
 	public List<Article> getAllArticle()//type liste de obje    
 	{ 
 		List<Article> articles = new ArrayList<Article>();  
-		articleRepository.findAll().forEach(a -> articles.add(a));  
+		articleRepository.findAll().forEach(a -> articles.add(a));// .findAll().forEach(a -> articles.add(a));  
 		return articles;  	
 	}  
 
 	//getting a specific record by using the method findById() of CrudRepository  
 	public Article getArticleById(int id)   
 	{  
-		return ArticleRepository.findById(id).get();  
+		return articleRepository.findById(id).get(); 
 	}  
 
 
 	//saving a specific record by using the method save() of CrudRepository  
-	public void saveOrUpdate(Article restaurants)   
+	public void saveOrUpdate(Article Articles)   
 	{  
-		restaurantRepository.save(restaurants);  
+		articleRepository.save(Articles);  
 	} 
 
 	//deleting a specific record by using the method deleteById() of CrudRepository  
 	public void delete(int id)   
 	{  
-		restaurantRepository.deleteById(id)
-;  
+		articleRepository.deleteById(id);  
 	} 
 
-	//updating a record  
-	public void update(Restaurant restaurants, int restaurantid)   
-	{  
-		restaurantRepository.save( restaurants);  
-	}  
 }
